@@ -7,7 +7,7 @@ const sha3 = require('web3-utils').sha3;
 const emptyAddress = '0x0000000000000000000000000000000000000000';
 const ETHRegistrarControllerAddress = new Map([
     [363, '0x0000000000000000000000000000000000000000'],
-    [365, '0x090aeFe8de61b7634DA1FbbB33e0cD81590dB932']
+    [365, '0xA1A95C6d98e7a51904855C347f3E111FBe572772']
 ]);
 
 function findETHRegistrarControllerAddress(networkId) {

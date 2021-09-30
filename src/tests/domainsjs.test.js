@@ -70,15 +70,15 @@
 
     describe('ETHRegistrarController', () => {
       test('getAvailable returns true', async () => {
-        const checkNameAvailable = await ethRegistrarController.checkNameAvailable("newname66")
+        const checkNameAvailable = await ethRegistrarController.checkNameAvailable("newname")
         expect(checkNameAvailable.available).toBe(true)
       })
 
       
       test('commit new name', async () => {
         const accounts = await getAccounts()
-        const commitName = await ethRegistrarController.commitName("newname66", accounts[0], secret)
-        const getCommitmentTimestamp = await ethRegistrarController.getCommitmentTimestamp("newname66", accounts[0], secret)
+        const commitName = await ethRegistrarController.commitName("newname", accounts[0], secret)
+        const getCommitmentTimestamp = await ethRegistrarController.getCommitmentTimestamp("newname", accounts[0], secret)
         expect(getCommitmentTimestamp.commitmentTimestamp.toNumber()).toBe((await ethersProvider.getBlock(commitName.tx.blockNumber)).timestamp);
       })
 
@@ -86,11 +86,11 @@
         advanceTime(60);
         const accounts = await getAccounts()
         //console.log(accounts[0]);
-        const costName = await ethRegistrarController.costName("newn");
+        const costName = await ethRegistrarController.costName("newname");
         const balanceBefore = await ethersProvider.getBalance(accounts[0]);
         //console.log(balanceBefore.toString());
-        console.log(costName)
-        await ethRegistrarController.buyNewDomain("newname66", accounts[0], secret, costName.cost.toString(), 0);
+        //console.log(costName)
+        await ethRegistrarController.buyNewDomain("newname", accounts[0], secret, costName.cost.toString(), 0);
         const balanceAfter = await ethersProvider.getBalance(accounts[0]);
         //console.log(balanceAfter.toString());
         expect(balanceBefore.sub(costName.cost)).toStrictEqual(balanceAfter);
