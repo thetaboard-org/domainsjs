@@ -145,7 +145,6 @@ export async function getBlock() {
   }
 }
 
-
 export const advanceTime = Promise.promisify(function(delay, done) {
   web3.currentProvider.send({
       jsonrpc: "2.0",

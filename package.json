@@ -12,13 +12,13 @@
   "devDependencies": {
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.5",
+    "@babel/plugin-transform-runtime": "^7.15.8",
     "@babel/preset-env": "^7.15.6",
+    "ensdomains-mock": "^2.0.35",
+    "ganache-core": "^2.13.2",
     "jest": "^27.2.3"
   },
   "dependencies": {
-    "@babel/plugin-transform-runtime": "^7.15.0",
-    "ensdomains-mock": "^2.0.35",
-    "ethers": "^5.4.7",
-    "ganache-core": "^2.13.2"
+    "ethers": "^5.4.7"
   }
 }
